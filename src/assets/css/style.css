@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  font-family: "Avenir", "sans-serif"; }
+
+body {
+  letter-spacing: 0.7px;
+  margin: 0;
+  padding: 0; }
+
+.card-wrapper {
+  background: #DADADA;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 7px; }
+
+.section-container {
+  width: 100%;
+  padding: 70px;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=style.css.map */

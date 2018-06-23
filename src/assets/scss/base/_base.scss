@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  font-family: $primary-font-family;
+}
+
+body {
+  letter-spacing: 0.7px;
+  margin: 0;
+  padding: 0;
+  // color: $dark-gray;
+}
+
+// .link {
+//   text-decoration: none;
+//   color: inherit;
+//   &:visited {
+//     color: inherit;
+//   }
+// }
