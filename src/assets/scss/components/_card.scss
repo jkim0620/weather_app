@@ -1,17 +1,47 @@
-.card-wrapper {
+.card-box {
   background: $light-gray;
-  margin: 10px;
-  padding: 10px;
+  margin: 30px auto;
+  padding: 10px 20px;
   border-radius: 7px;
+  min-width: 200px;
+  max-width: 300px;
   .icon-box {
     justify-content: center;
-    height: 120px;
+    height: 160px;
     text-align: center;
-    // padding-top: 30px;
     img {
       position: relative;
-      top: 20%;
+      top: 30%;
       width: 50px;
     }
+  }
+}
+
+@media (min-width: 770px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .card-wrapper {
+    flex: 1;
+  }
+
+  .card-box {
+    margin: 30px 10px;
+  }
+
+}
+
+@media (min-width: 1100px) {
+  .card-container {
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  .card-box {
+    min-width: 150px;
   }
 }

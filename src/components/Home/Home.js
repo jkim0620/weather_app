@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import Dashboard from './Dashboard';
+import Card from './Card';
 import City from '../City/City';
 
 import cloudIcon from '../../assets/img/cloud.svg';
@@ -35,10 +35,6 @@ class Home extends Component {
     .catch(err => {
       console.log(err);
     });
-
-    // const { city_data } = this.props;
-    // this.props.dispatch(getCurrentWeather)
-
   }
 
   handleWeatherIcon(id) {
@@ -73,11 +69,11 @@ class Home extends Component {
     return (
       <div className="section-container">
       HEllo
-        <section className="dashboard-wrapper" style={{ display: 'flex' }}>
+        <section className="card-container">
           {this.state.city_data.map(city => {
             return (
-              <Link key={city.id} to={`/${city.id}`} style={{ flex: 1 }}>
-                <Dashboard city={city} handleWeatherIcon={this.handleWeatherIcon.bind(this)} />
+              <Link className="card-wrapper" key={city.id} to={`/${city.id}`}>
+                <Card city={city} handleWeatherIcon={this.handleWeatherIcon.bind(this)} />
               </Link>
             )
           })}
@@ -87,30 +83,4 @@ class Home extends Component {
   }
 }
 
-
-// Home.propTypes = {
-//   city_data: PropTypes.array.isRequired,
-// }
-//
-//
-// const mapStateToProps = (state) => {
-//   const {
-//     city_data,
-//   } = state.currentWeather;
-//
-//   return {
-//     city_data,
-//   }
-// }
-//
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     // dispatch: dispatch
-//     // city_data: (data) => dispatch(getCurrentWeather(data)),
-//     getCurrentWeather: () => dispatch(getCurrentWeather()),
-//   }
-// }
-//
-// // export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Home))
-// export default connect(mapStateToProps, mapDispatchToProps)(Home);
 export default Home;

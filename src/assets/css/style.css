@@ -13,23 +13,48 @@ a {
   a:visited {
     color: inherit; }
 
-.card-wrapper {
+.card-box {
   background: #DADADA;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 7px; }
-  .card-wrapper .icon-box {
+  margin: 30px auto;
+  padding: 10px 20px;
+  border-radius: 7px;
+  min-width: 200px;
+  max-width: 300px; }
+  .card-box .icon-box {
     justify-content: center;
-    height: 120px;
+    height: 160px;
     text-align: center; }
-    .card-wrapper .icon-box img {
+    .card-box .icon-box img {
       position: relative;
-      top: 20%;
+      top: 30%;
       width: 50px; }
 
+@media (min-width: 770px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    margin: 0 auto; }
+
+  .card-wrapper {
+    flex: 1; }
+
+  .card-box {
+    margin: 30px 10px; } }
+@media (min-width: 1100px) {
+  .card-container {
+    width: 100%;
+    max-width: 1400px; }
+
+  .card-box {
+    min-width: 150px; } }
 .section-container {
   width: 100%;
   padding: 70px;
   margin: 0 auto; }
+
+@media (min-width: 1100px) {
+  .section-container {
+    padding: 70px 30px; } }
 
 /*# sourceMappingURL=style.css.map */

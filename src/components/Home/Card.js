@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Dashboard = (props) => {
+const Card = (props) => {
   const {
     city,
     handleWeatherIcon,
   } = props;
 
   return (
-    <div className="card-wrapper">
+    <div className="card-box">
       <div className="icon-box">
         {props.handleWeatherIcon(props.city.weather[0].id)}
       </div>
@@ -19,4 +19,4 @@ const Dashboard = (props) => {
   );
 }
 
-export default Dashboard;
+export default Card;

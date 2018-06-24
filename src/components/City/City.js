@@ -9,11 +9,13 @@ class City extends Component {
   constructor(props) {
     super(props);
 
-
     this.state = {
       city_name: '',
       temp: 0,
-
+      humidity: 0,
+      temp_max: 0,
+      temp_min: 0,
+      desc: '',
     }
   }
 
@@ -32,8 +34,11 @@ class City extends Component {
       this.setState({
         city_name: weatherData.name,
         temp: weatherData.main.temp,
-      })
-
+        humidity: weatherData.main.humidity,
+        temp_max: weatherData.main.temp_max,
+        temp_min: weatherData.main.temp_min,
+        desc: weatherData.weather[0].description,
+      });
     })
     .catch(err => {
       console.log(err);
@@ -46,6 +51,8 @@ class City extends Component {
         This is {this.state.city_name}
         <br />
         {this.state.temp}
+        <br />
+        {this.state.desc}
       </div>
     );
   }
