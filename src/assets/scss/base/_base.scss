@@ -10,10 +10,10 @@ body {
   // color: $dark-gray;
 }
 
-// .link {
-//   text-decoration: none;
-//   color: inherit;
-//   &:visited {
-//     color: inherit;
-//   }
-// }
+a {
+  text-decoration: none;
+  color: inherit;
+  &:visited {
+    color: inherit;
+  }
+}

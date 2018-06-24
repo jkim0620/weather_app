@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import Dashboard from './Dashboard';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+import Dashboard from './Dashboard';
+import NewYork from '../City/NewYork';
+
 import cloudIcon from '../../assets/img/cloud.svg';
 import sunIcon from '../../assets/img/sun.svg';
 import snowIcon from '../../assets/img/mist.svg';
@@ -36,27 +40,27 @@ class Home extends Component {
   handleWeatherIcon(id) {
     if (id > 800 && id < 900) {
       return (
-        <img src={cloudIcon} style={{ width: '50px' }} />
+        <img src={cloudIcon} />
       );
     } else if (id === 800) {
       return (
-        <img src={sunIcon} style={{ width: '50px' }} />
+        <img src={sunIcon} />
       );
     } else if (id > 700 && id < 800) {
       return (
-        <img src={fogIcon} style={{ width: '50px' }} />
+        <img src={fogIcon} />
       );
     } else if (id >= 600 && id < 700) {
       return (
-        <img src={snowIcon} style={{ width: '50px' }} />
+        <img src={snowIcon} />
       );
     } else if (id >= 300 && id < 600) {
       return (
-        <img src={rainIcon} style={{ width: '50px' }} />
+        <img src={rainIcon} />
       );
     } else if (id >= 200 && id < 300) {
       return (
-        <img src={thunderIcon} style={{ width: '50px' }} />
+        <img src={thunderIcon} />
       );
     }
   }
@@ -71,6 +75,10 @@ class Home extends Component {
             )
           })}
         </section>
+
+        <Link to='/5128638'>  
+          <NewYork city={this.state.city_data} />
+        </Link>
       </div>
     );
   }
