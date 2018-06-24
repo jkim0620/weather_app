@@ -58,11 +58,11 @@ class Home extends Component {
     if (icon === sunIcon) {
       return '#ffda26';
     } else if (icon === rainIcon || icon === snowIcon) {
-      return '#373799';
+      return '#4747e0';
     } else if (icon === fogIcon || cloudIcon) {
       return '#97caef';
     } else if (icon === thunderIcon) {
-      return '#58097a';
+      return '#9a0cce';
     }
   }
 

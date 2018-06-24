@@ -9,13 +9,17 @@ const Card = (props) => {
 
   const weatherIcon = props.handleWeatherIcon(props.city.weather[0].id);
   return (
-    <div className="card-box" style={{ background: props.handleBgColor(weatherIcon) }}>
-      <div className="icon-box">
-        <img src={weatherIcon} />
-      </div>
-      <div className="">
-        <p>{Math.round(props.city.main.temp)}&#176; {props.city.weather[0].main}</p>
-        <h1>{props.city.name}</h1>
+    <div>
+      <div className="card-box" style={{ background: props.handleBgColor(weatherIcon) }}>
+        <div className="overlay"></div>
+        <div className="icon-box">
+          <img src={weatherIcon} />
+        </div>
+        <div className="desc-box">
+          <p className="temp">{Math.round(props.city.main.temp)}&#176;</p>
+          <p className="desc">{props.city.weather[0].main}</p>
+          <p className="name">{props.city.name}</p>
+        </div>
       </div>
     </div>
   );
