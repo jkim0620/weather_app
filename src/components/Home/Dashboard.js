@@ -7,7 +7,7 @@ const Dashboard = (props) => {
   } = props;
 
   return (
-    <div className="card-wrapper" style={{ flex: 1 }}>
+    <div className="card-wrapper">
       <div className="icon-box">
         {props.handleWeatherIcon(props.city.weather[0].id)}
       </div>
