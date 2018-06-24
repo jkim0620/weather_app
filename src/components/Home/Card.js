@@ -4,12 +4,14 @@ const Card = (props) => {
   const {
     city,
     handleWeatherIcon,
+    handleBgColor,
   } = props;
 
+  const weatherIcon = props.handleWeatherIcon(props.city.weather[0].id);
   return (
-    <div className="card-box">
+    <div className="card-box" style={{ background: props.handleBgColor(weatherIcon) }}>
       <div className="icon-box">
-        {props.handleWeatherIcon(props.city.weather[0].id)}
+        <img src={weatherIcon} />
       </div>
       <div className="">
         <p>{Math.round(props.city.main.temp)}&#176; {props.city.weather[0].main}</p>

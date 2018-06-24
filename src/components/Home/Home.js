@@ -8,7 +8,6 @@ import City from '../City/City';
 import cloudIcon from '../../assets/img/cloud.svg';
 import sunIcon from '../../assets/img/sun.svg';
 import snowIcon from '../../assets/img/mist.svg';
-import partcloudIcon from '../../assets/img/partcloud.svg';
 import mistIcon from '../../assets/img/mist.svg';
 import fogIcon from '../../assets/img/fog.svg';
 import thunderIcon from '../../assets/img/thunder.svg';
@@ -20,6 +19,8 @@ class Home extends Component {
 
     this.state = {
       city_data: [],
+      bg_color: '',
+      img_src: 0,
     }
   }
 
@@ -39,29 +40,29 @@ class Home extends Component {
 
   handleWeatherIcon(id) {
     if (id > 800 && id < 900) {
-      return (
-        <img src={cloudIcon} />
-      );
+      return cloudIcon;
     } else if (id === 800) {
-      return (
-        <img src={sunIcon} />
-      );
+        return sunIcon;
     } else if (id > 700 && id < 800) {
-      return (
-        <img src={fogIcon} />
-      );
+      return fogIcon;
     } else if (id >= 600 && id < 700) {
-      return (
-        <img src={snowIcon} />
-      );
+      return snowIcon;
     } else if (id >= 300 && id < 600) {
-      return (
-        <img src={rainIcon} />
-      );
+      return rainIcon;
     } else if (id >= 200 && id < 300) {
-      return (
-        <img src={thunderIcon} />
-      );
+      return thunderIcon;
+    }
+  }
+
+  handleBgColor(icon) {
+    if (icon === sunIcon) {
+      return '#ffda26';
+    } else if (icon === rainIcon || icon === snowIcon) {
+      return '#373799';
+    } else if (icon === fogIcon || cloudIcon) {
+      return '#97caef';
+    } else if (icon === thunderIcon) {
+      return '#58097a';
     }
   }
 
@@ -73,7 +74,7 @@ class Home extends Component {
           {this.state.city_data.map(city => {
             return (
               <Link className="card-wrapper" key={city.id} to={`/${city.id}`}>
-                <Card city={city} handleWeatherIcon={this.handleWeatherIcon.bind(this)} />
+                <Card city={city} handleBgColor={this.handleBgColor.bind(this)} handleWeatherIcon={this.handleWeatherIcon.bind(this)} />
               </Link>
             )
           })}
