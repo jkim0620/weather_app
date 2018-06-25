@@ -1,0 +1,22 @@
+nav {
+  width: 100%;
+  padding: 7px;
+  color: $white;
+  text-align: center;
+  clear: right;
+  background: #1c2228;
+  p {
+    margin: 0;
+  }
+  .timestamp {
+    float: right;
+    font-size: 11px;
+    margin-top: 3px;
+    margin-right: 5px;
+  }
+  .title {
+    // text-align: center;
+    // clear: right;
+    margin-left: 50px;
+  }
+}

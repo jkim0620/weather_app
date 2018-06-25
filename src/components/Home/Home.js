@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import Card from './Card';
 import City from '../City/City';
+import Nav from '../Base/Nav';
+import Footer from '../Base/Footer';
 
 import cloudIcon from '../../assets/img/cloud.svg';
 import sunIcon from '../../assets/img/sun.svg';
@@ -59,26 +61,30 @@ class Home extends Component {
       return '#ffda26';
     } else if (icon === rainIcon || icon === snowIcon) {
       return '#4747e0';
-    } else if (icon === fogIcon || cloudIcon) {
+    } else if (icon === cloudIcon) {
       return '#97caef';
     } else if (icon === thunderIcon) {
       return '#9a0cce';
+    } else if (icon === fogIcon) {
+      return '#09c6a4';
     }
   }
 
   render() {
     return (
-      <div className="section-container">
-      HEllo
-        <section className="card-container">
-          {this.state.city_data.map(city => {
-            return (
-              <Link className="card-wrapper" key={city.id} to={`/${city.id}`}>
-                <Card city={city} handleBgColor={this.handleBgColor.bind(this)} handleWeatherIcon={this.handleWeatherIcon.bind(this)} />
-              </Link>
-            )
-          })}
-        </section>
+      <div>
+        <Nav />
+        <div className="section-container">
+          <section className="card-container">
+            {this.state.city_data.map(city => {
+              return (
+                <Link className="card-wrapper" key={city.id} to={`/${city.id}`}>
+                  <Card city={city} handleBgColor={this.handleBgColor.bind(this)} handleWeatherIcon={this.handleWeatherIcon.bind(this)} />
+                </Link>
+              )
+            })}
+          </section>
+        </div>
       </div>
     );
   }

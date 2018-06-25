@@ -1,3 +1,9 @@
+/*
+============================
+HOME COMPONENT CARD
+============================
+*/
+
 .card-box {
   position: relative;
   background: $light-gray;
@@ -15,6 +21,7 @@
     .desc-box {
       .name {
         color: $true-black;
+        border-color: $true-black;
       }
     }
   }
@@ -43,6 +50,8 @@
       margin-bottom: 17px;
     }
     .name {
+      border-top: 2px $white solid;
+      padding-top: 10px;
       font-size: 27px;
       color: $white;
       transition: all .3s ease-in;
@@ -64,7 +73,79 @@
   transition: all .3s ease-in;
 }
 
+/*
+============================
+CITY COMPONENT CARD
+============================
+*/
+
+.city-card-container {
+  height: 100vh;
+  width: 100%;
+  padding-top: 120px !important;
+}
+
+.city-card-box-1 {
+  margin: 0 auto;
+  text-align: center;
+  color: $white;
+  background: $black;
+  width: 270px;
+  padding: 20px;
+  max-width: 300px;
+  height: 220px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  .temp {
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .temp-detail {
+    font-size: 20px;
+  }
+  .city-name {
+    font-size: 40px;
+    margin: 18px 0;
+  }
+}
+
+.city-card-box-2 {
+  margin: 0 auto;
+  text-align: center;
+  color: $white;
+  background: #33495f;
+  width: 270px;
+  max-width: 300px;
+  height: 220px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  .icon-box {
+    padding: 20px;
+    height: 150px;
+    img {
+      margin-top: 10px;
+      width: 100px;
+    }
+  }
+  .desc-box {
+    padding: 10px;
+    height: 70px;
+    background: #eff7ff;
+    color: $black;
+    font-size: 22px;
+    font-weight: 500;
+    padding-top: 20px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    .capitalize {
+      text-transform: capitalize;
+    }
+  }
+}
+
 @media (min-width: 770px) {
+  // HOME COMPONENT CARD
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +160,47 @@
   .card-box {
     margin: 30px 10px;
   }
+
+  // CITY COMPONENT CARD
+  .city-card-container {
+    display: flex;
+  }
+
+  .city-card-box-1 {
+    margin-right: 0;
+    width: 350px;
+    height: 300px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 0;
+    .temp {
+      margin-top: 50px;
+    }
+    .city-name {
+      margin-top: 30px;
+    }
+  }
+
+  .city-card-box-2 {
+    margin-left: 0;
+    width: 350px;
+    height: 300px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    .icon-box {
+      height: 220px;
+      img {
+        margin-top: 28px;
+        width: 120px;
+      }
+    }
+    .desc-box {
+      height: 80px;
+      padding-top: 27px;
+      border-bottom-right-radius: 7px;
+      border-bottom-left-radius: 0;
+    }
+  }
+
 
 }
 
