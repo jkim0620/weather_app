@@ -1,6 +1,7 @@
 {
   "name": "agencywithin_developer_test",
   "version": "0.1.0",
+  "homepage": "http://city-weather-app.s3-website.us-east-2.amazonaws.com/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
@@ -23,6 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "aws s3 sync build/ s3://city-weather-app",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
