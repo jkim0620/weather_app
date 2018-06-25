@@ -5,7 +5,6 @@ import Home from './components/Home/Home';
 import City from './components/City/City';
 import './assets/css/style.css';
 
-
 const Main = () => (
   <div>
     <Switch>

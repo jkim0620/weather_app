@@ -78,7 +78,7 @@ class Home extends Component {
           <section className="card-container">
             {this.state.city_data.map(city => {
               return (
-                <Link className="card-wrapper" key={city.id} to={`/${city.id}`}>
+                <Link className="card-wrapper" key={city.id} to={{ pathname: `/${city.id}`, state: { handleBgColor: this.handleBgColor.bind(this), handleWeatherIcon: this.handleWeatherIcon.bind(this) } }}>
                   <Card city={city} handleBgColor={this.handleBgColor.bind(this)} handleWeatherIcon={this.handleWeatherIcon.bind(this)} />
                 </Link>
               )

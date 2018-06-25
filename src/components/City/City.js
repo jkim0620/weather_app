@@ -16,6 +16,7 @@ import rainIcon from '../../assets/img/rain.svg';
 let url = '';
 let lastParam = 0;
 
+
 class City extends Component {
   constructor(props) {
     super(props);
