@@ -41,26 +41,35 @@ class City extends Component {
   componentDidMount() {
     window.scrollTo(0,0);
 
-    axios
-    .get(`http://api.openweathermap.org/data/2.5/group?id=${lastParam}&units=imperial&APPID=b24113494e03ce028fba12dcd2298dda`)
-    .then(response => {
-      console.log(response.data.list[0]);
-      const weatherData = response.data.list[0]
-      this.setState({
-        id: weatherData.weather[0].id,
-        city_name: weatherData.name,
-        temp: weatherData.main.temp,
-        humidity: weatherData.main.humidity,
-        temp_max: weatherData.main.temp_max,
-        temp_min: weatherData.main.temp_min,
-        desc: weatherData.weather[0].description,
-      });
+    const getWeatherDetail = () => {
+      axios
+      .get(`http://api.openweathermap.org/data/2.5/group?id=${lastParam}&units=imperial&APPID=b24113494e03ce028fba12dcd2298dda`)
+      .then(response => {
+        console.log(response.data.list[0]);
+        const weatherData = response.data.list[0]
+        this.setState({
+          id: weatherData.weather[0].id,
+          city_name: weatherData.name,
+          temp: weatherData.main.temp,
+          humidity: weatherData.main.humidity,
+          temp_max: weatherData.main.temp_max,
+          temp_min: weatherData.main.temp_min,
+          desc: weatherData.weather[0].description,
+        });
 
-      console.log(this.state.id);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+        console.log(this.state.id);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    };
+
+    getWeatherDetail();
+
+    // Update weather data every 10 minutes
+    setInterval(() => {
+      getWeatherDetail();
+    }, 600000)
   }
 
   handleWeatherIcon(id) {

@@ -27,19 +27,31 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios
-    .get('http://api.openweathermap.org/data/2.5/group?id=5128638,3882428,1835848,6542283,2643743&units=imperial&APPID=b24113494e03ce028fba12dcd2298dda')
-    .then(response => {
-      this.setState({
-        city_data: response.data.list,
+    const getWeatherData = () => {
+      axios
+      .get('http://api.openweathermap.org/data/2.5/group?id=5128638,3882428,1835848,6542283,2643743&units=imperial&APPID=b24113494e03ce028fba12dcd2298dda')
+      .then(response => {
+        this.setState({
+          city_data: response.data.list,
+        })
+        console.log(this.state.city_data);
       })
-      console.log(this.state.city_data);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+      .catch(err => {
+        console.log(err);
+      });
+    };
+
+    // Get initial data
+    getWeatherData();
+
+    // Update weather data every 10 minutes
+    setInterval(() => {
+      getWeatherData();
+    }, 600000);
   }
 
+  // id represents the type of weather in the Openweathermap API
+  // Render weather icon accordingly to weather id
   handleWeatherIcon(id) {
     if (id > 800 && id < 900) {
       return cloudIcon;
@@ -56,6 +68,7 @@ class Home extends Component {
     }
   }
 
+  // CHange background color by weather
   handleBgColor(icon) {
     if (icon === sunIcon) {
       return '#ffda26';
