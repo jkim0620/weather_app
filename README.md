@@ -9,6 +9,7 @@
 #### Weather API app
 * User gets the overview of the latest weather data of 5 cities.
 * Each city is linked to its own component with more details.
+* Weather data updates every 10 minutes.
 
 
 
