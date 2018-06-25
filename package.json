@@ -8,6 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.0",
     "ajv": "^6.5.1",
     "axios": "^0.18.0",
+    "gh-pages": "^1.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -24,6 +25,6 @@
     "build": "react-scripts build",
     "deploy": "aws s3 sync build/ s3://city-weather-app",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "eject": "react-scripts eject"
   }
 }
