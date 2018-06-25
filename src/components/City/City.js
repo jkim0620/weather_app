@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import Nav from '../Base/Nav';
-import Footer from '../Base/Footer';
 
 import cloudIcon from '../../assets/img/cloud.svg';
 import sunIcon from '../../assets/img/sun.svg';

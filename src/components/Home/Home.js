@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 import City from '../City/City';
 import Nav from '../Base/Nav';
-import Footer from '../Base/Footer';
 
 import cloudIcon from '../../assets/img/cloud.svg';
 import sunIcon from '../../assets/img/sun.svg';
